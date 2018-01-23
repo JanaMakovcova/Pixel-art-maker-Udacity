@@ -1,12 +1,11 @@
 
-var barva =$('#colorPicker').val();
-var height = $('#input_height').val();
-var width = $('#input_width').val();
 var tabulka = $('#pixel_canvas');
 
-
-function makeGrid(i, j) {
+function makeGrid(event) {
+  var height = $('#input_height').val();
+  var width = $('#input_width').val();
   var retezec  = '';
+  event.preventDefault(); //at se to neprekresli zpet
 for (var i = 0; i < height; i++) {
   retezec = retezec +'<tr>';
   for (var j = 0; j < width; j++) {
@@ -15,11 +14,12 @@ for (var i = 0; i < height; i++) {
   retezec = retezec + '</tr>';
 }
 return retezec;
-// Your code goes here!
 }
 
-tabulka.html(makeGrid(height,width));
 function setSize(){
-  tabulka.html(makeGrid(height,width));
-  //$('#input_height').attr("value", height.toString());
+tabulka.html(makeGrid(event));
+tabulka.on("click","td", function(){
+  var vybranaBarva = $('#colorPicker').val();
+  $(this).css('background-color', vybranaBarva);
+})
 }
