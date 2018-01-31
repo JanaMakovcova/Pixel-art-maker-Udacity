@@ -7,24 +7,28 @@
 
 </head>
 <body>
-    <h1>Lab: Pixel Art Maker</h1>
-
-    <h2>Choose Grid Size</h2>
-    <form id="sizePicker" onsubmit="setSize()">
+<div class="flexcontainer">
+  <div class="flexitem">
+        <h1>Lab: Pixel Art Maker</h1>
+        <h2>Choose Grid Size</h2>
+        <form id="sizePicker" onsubmit="setSize()">
         Grid Height:
-        <input type="number" id="input_height" name="height" min="1" value="10">
+        <input type="number" id="input_height" name="height" min="1" value="10" max="50">
         Grid Width:
-        <input type="number" id="input_width" name="width" min="1" value="10">
+        <input type="number" id="input_width" name="width" min="1" value="10" max="50">
         <input type="submit">
-    </form>
+        </form>
+        <h2>Pick A Color</h2>
+        <input type="color" id="colorPicker">
+  </div>
+  <div class="flexitem">
+    <h1>Design Canvas</h1>
 
-    <h2>Pick A Color</h2>
-    <input type="color" id="colorPicker">
-
-    <h2>Design Canvas</h2>
     <table id="pixel_canvas">
 
     </table>
+  </div>
+</div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="designs.js"></script>

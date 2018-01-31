@@ -1,10 +1,25 @@
 body {
     text-align: center;
+    background: lightblue;
+}
+.flexcontainer{
+  background: white;
+  padding: 0;
+  margin: 50px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 30px;
+}
+.flexitem{
+
+    text-align: center;
 }
 
+
 h1 {
-    font-family: Monoton;
-    font-size: 70px;
+
+    font-size: 50px;
     margin: 0.2em;
 }
 
